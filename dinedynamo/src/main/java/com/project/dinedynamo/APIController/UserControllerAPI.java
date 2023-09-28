@@ -22,8 +22,14 @@ public class UserControllerAPI {
     @GetMapping("/getUserDetailsByName")
     public User getUserDetailsByName(@RequestParam String name) {
         return userservice.getUserDetailsByName(name);
-
     }
+
+    @GetMapping("/getAll")
+    public List<User> getAll()
+    {
+        return userservice.getAllUsers();
+    }
+    
 }
 
 

@@ -16,7 +16,9 @@ public class Items {
     private String item;
     private String category;
     private int price;
+    private String picture;
 
 
 
 }
+

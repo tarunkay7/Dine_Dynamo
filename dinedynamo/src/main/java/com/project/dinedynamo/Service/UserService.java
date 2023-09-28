@@ -1,10 +1,13 @@
 package com.project.dinedynamo.Service;
 
+import com.project.dinedynamo.Entities.Items;
 import com.project.dinedynamo.Entities.User;
 import com.project.dinedynamo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,9 +18,10 @@ public class UserService {
     UserRepository userrepository;
 
     public User addUser(User user) {
-        user.setAdmin(false);
+        user.setCart(new ArrayList<>());
         return userrepository.save(user);
     }
+
     public User getUserDetailsByName(String name) {
         return userrepository.findByName(name);
     }
@@ -26,3 +30,4 @@ public class UserService {
         return userrepository.findAll();
     }
 }
+

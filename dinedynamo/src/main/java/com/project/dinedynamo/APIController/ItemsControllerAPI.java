@@ -23,15 +23,10 @@ public class ItemsControllerAPI {
 
     @GetMapping("/ItemsByCategory")
     public String getItemsByCategory(Model model, @RequestParam("") String category) {
-        System.out.println("Entering getItemsByCategory method");
 
         List<Items> items = itemsservice.getItemsByCategory("Lunch");
-        System.out.println("Number of items retrieved: " + items.size());
 
         model.addAttribute("catitems", items);
-        System.out.println("Added 'catitems' attribute to the model");
-
-        System.out.println("Exiting getItemsByCategory method");
 
         return "catitems";
     }

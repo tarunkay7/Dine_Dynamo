@@ -19,6 +19,7 @@ public class UserService {
 
     public User addUser(User user) {
         user.setCart(new ArrayList<>());
+        user.setAdmin(false);
         return userrepository.save(user);
     }
 

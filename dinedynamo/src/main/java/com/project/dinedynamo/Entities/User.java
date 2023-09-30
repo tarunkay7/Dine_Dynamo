@@ -21,6 +21,7 @@ public class User {
     private String phoneNumber;
     private List<Items> cart;
 
+    private boolean isAdmin;
 
 
 

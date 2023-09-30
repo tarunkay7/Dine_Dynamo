@@ -3,12 +3,14 @@ package com.project.dinedynamo.APIController;
 import com.project.dinedynamo.Entities.User;
 import com.project.dinedynamo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/users")
+@Controller
+@RequestMapping("/users")
 public class UserControllerAPI {
 
     @Autowired
@@ -30,6 +32,7 @@ public class UserControllerAPI {
     {
         return userservice.getAllUsers();
     }
+
     
 }
 

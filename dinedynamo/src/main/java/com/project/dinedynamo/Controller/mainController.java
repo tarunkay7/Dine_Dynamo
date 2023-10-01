@@ -11,4 +11,8 @@ public class mainController {
     public String showMessage(Model model) {
         return "items";
     }
+    @GetMapping("/my-page")
+    public String myPage(Model model) {
+        return "home"; // This corresponds to "home.html"
+    }
 }

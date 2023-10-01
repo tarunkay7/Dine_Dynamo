@@ -5,8 +5,12 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
+@Controller
 public class DineDynamoApplication {
 
 	@Autowired
@@ -18,7 +22,12 @@ public class DineDynamoApplication {
 	}
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(DineDynamoApplication.class, args);
 	}
+//	@GetMapping("/my-page")
+//	public String myPage(Model model) {
+//		return "home"; // This corresponds to "home.html"
+//	}
 
 }

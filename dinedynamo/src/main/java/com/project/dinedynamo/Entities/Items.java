@@ -13,12 +13,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Items")
 public class Items {
 
-    private String item;
+    private String name;
     private String category;
     private int price;
-    private String picture;
-
-
-
+    private String image;
 }
 

@@ -29,8 +29,9 @@
                 <div class="card custom-card">
                     <div class="card-body">
                         <!-- Display item name and price from the model -->
-                        <h5 class="card-title" th:text="${item.item}"></h5>
+                        <h5 class="card-title" th:text="${item.name}"></h5>
                         <p class="card-text" th:text="${item.price}"></p>
+                        <img th:src="${item.image}" class="card-img-top" alt="${item.name}+picture" width="150px" height="300px">
                     </div>
                 </div>
             </div>

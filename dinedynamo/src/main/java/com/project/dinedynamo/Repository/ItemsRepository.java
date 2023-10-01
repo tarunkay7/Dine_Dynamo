@@ -10,4 +10,6 @@ public interface ItemsRepository extends MongoRepository<Items, String> {
 
 
     List<Items> findByPrice(int price);
+
+    Items findByName(String name);
 }

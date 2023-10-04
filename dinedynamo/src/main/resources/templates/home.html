@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--  <link rel="stylesheet" href="style.css" />-->
+  <!--  <link rel="stylesheet" href="style.css" />-->
   <!-- Unicons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Background animation</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+  <script type='text/javascript' src=''></script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+  <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
   <style>
     /* Import Google font - Poppins */
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -219,7 +224,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Raleway', sans-serif;
-      background-image: url("static/bg5.jpg");
+      /*background-image: url("static/bg5.jpg");*/
+      background-color: #7d2ae8;
     }
 
     .text-container {
@@ -235,7 +241,8 @@
       margin: 0;
       font-size: 50px;
       color: rgba(225,225,225, .01);
-      background-image: url("static/bg.jpg");
+      /*background-image: url("static/bg.jpg");*/
+      background-color: antiquewhite;
       background-repeat: repeat;
       -webkit-background-clip:text;
       animation: animate 15s ease-in-out infinite;
@@ -243,7 +250,6 @@
       text-transform: uppercase;
       font-weight: 900;
     }
-
     @keyframes animate {
       0%, 100% {
         background-position: left top;
@@ -271,16 +277,7 @@
       margin-top: 0px;
       text-shadow: 7px 7px 0px #d2d2d22e;
     }
-    .heading {
-      margin-top: 30px;
-    }
-    /* .text-1 {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='200px' height='200px' viewBox='0 0 400 400'%3e%3cdefs%3e%3cfilter id='filter' width='400px' height='400px' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-color='%23f5576c' flood-opacity='1' x='0' y='0' width='250px' height='250px' result='flood3'%3e%3c/feFlood%3e%3cfeFlood flood-color='%23f093fb' flood-opacity='1' x='150px' y='150px' width='250px' height='250px' result='flood4'%3e%3c/feFlood%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood3' edgeMode='none' result='blur1'%3e%3c/feGaussianBlur%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood4' edgeMode='none' result='blur2'%3e%3c/feGaussianBlur%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur2' in2='SourceGraphic' result='blend5'%3e%3c/feBlend%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur1' in2='blend5' result='blend6'%3e%3c/feBlend%3e%3c/filter%3e%3c/defs%3e%3crect width='400' height='400' x='0' y='0' fill='%23fee140' filter='url(%23filter)'%3e%3c/rect%3e%3c/svg%3e");
-    }
 
-    .text-2 {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='200px' height='200px' viewBox='0 0 400 400'%3e%3cdefs%3e%3cfilter id='filter' width='400px' height='400px' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-color='%238fd3f4' flood-opacity='1' x='0' y='0' width='250px' height='250px' result='flood3'%3e%3c/feFlood%3e%3cfeFlood flood-color='%2396e6a1' flood-opacity='1' x='150px' y='150px' width='250px' height='250px' result='flood4'%3e%3c/feFlood%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood3' edgeMode='none' result='blur1'%3e%3c/feGaussianBlur%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood4' edgeMode='none' result='blur2'%3e%3c/feGaussianBlur%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur2' in2='SourceGraphic' result='blend5'%3e%3c/feBlend%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur1' in2='blend5' result='blend6'%3e%3c/feBlend%3e%3c/filter%3e%3c/defs%3e%3crect width='400' height='400' x='0' y='0' fill='%23d4fc79' filter='url(%23filter)'%3e%3c/rect%3e%3c/svg%3e");
-    } */
     *{
       margin: 0 ;
       padding: 0 ;
@@ -292,29 +289,9 @@
       margin: 0 auto;
       /* padding: 1%; */
     }
-    .img-responsive{
-      width: 100%;
-    }
-    .img-curve{
-      border-radius: 15px;
-    }
 
     .text-right{
       text-align: right;
-    }
-    .text-center{
-      text-align: center;
-    }
-    .text-left{
-      text-align: left;
-    }
-    .text-white{
-      color: white;
-    }
-
-    .clearfix{
-      clear: both;
-      float: none;
     }
 
     a{
@@ -377,179 +354,45 @@
       padding: 3%;
       border-radius: 5px;
     }
-    /* .abproject p{
-      color: white;
-      font-family: "cosmic sans-serif";
-      font-size: 20px;
-      margin-right: 150px;
-      margin-left: 150px;
-      padding-bottom: 50px;
-    } */
-
-    /* CSSS for navbar section */
-    /*
-    .logo{
-      width: 10%;
-      float: left;
-    }
-    .menu{
-      line-height: 60px;
-    }
-    .menu ul{
-      list-style-type: none;
-    }
-
-    .menu ul li{
-      display: inline;
-      padding: 1%;
-      font-weight: bold;
-    } */
-
-
-    /* CSS for Categories */
-    .categories{
-      padding: 4% 0;
-    }
-
-    .box-3{
-      width: 28%;
-      float: left;
-      margin: 2%;
-    }
-
-
-    /* CSS for Food Menu */
-    /* .food-menu{
-      background-color: black;
-    } */
-    .food-menu-box{
-      width: 43%;
-      margin: 3%;
-      padding: 2%;
-      float: left;
-      background-color: white;
-      border-radius: 15px;
-    }
-
-    .food-menu-img{
-      width: 20%;
-      float: left;
-    }
-
-    .food-menu-desc{
-      width: 70%;
-      float: left;
-      margin-left: 8%;
-    }
-
-    .food-price{
-      font-size: 1.2rem;
-      margin: 2% 0;
-    }
-    .food-detail{
-      font-size: 1rem;
-      color: #747d8c;
-    }
-
-
-    /* CSS for Social
-    .social ul{
-      list-style-type: none;
-    }
-    .social ul li{
-      display: inline;
-      padding: 1%;
-    } */
-
-    /* for Order Section */
-    .order{
-      width: 50%;
-      margin: 0 auto;
-    }
-    .input-responsive{
-      width: 96%;
-      padding: 1%;
-      margin-bottom: 3%;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    .order-label{
-      margin-bottom: 1%;
-      font-weight: bold;
-    }
-
-
 
     /* CSS for Mobile Size or Smaller Screen */
 
-    @media only screen and (max-width:768px){
-      .text{
+    @media only screen and (max-width:768px) {
+      .text {
         font-size: 300%;
       }
-      .abproject p{
+
+      .abproject p {
         font-size: 20px;
         margin-left: 10%;
         margin-right: 10%;
       }
-      .Timings {
-        margin-left: 15%;
-        margin-right: 15%;
-        border-left: solid white;
-        border-bottom: solid white;
-        border-right: solid white;
-        border-top: solid white;
-        border-radius: 10px;
-        padding-top: 20px;
-        padding-bottom: 30px;
-      }
-      .menu ul{
+
+      .menu ul {
         text-align: center;
       }
 
-      .food-search input[type="search"]{
+      .food-search input[type="search"] {
         width: 90%;
         padding: 2%;
         margin-bottom: 3%;
       }
 
-      .btn{
-        width: 91%;
-        padding: 2%;
-      }
-
-      .food-search{
-        padding: 3% 0 0 0;
-      }
-
-      .categories{
-        padding: 20% 0;
-      }
-      h2{
+      h2 {
         margin-bottom: 10%;
       }
-      .box-3{
+
+      .box-3 {
         width: 100%;
         margin: 4% auto;
       }
-
-      .food-menu{
-        padding: 5% 0;
-      }
-
-      .food-menu-box{
-        width: 90%;
-        padding: 5%;
-        margin-bottom: 5%;
-      }
-      .social{
-        padding: 5% 0;
-      }
-      .order{
-        width: 100%;
-      }
     }
-
+    .card {
+      border: 2px solid #333;
+    }
+    .custom-button {
+      width: 200px; /* Set the desired width here */
+    }
   </style>
 </head>
 <body>
@@ -583,16 +426,11 @@
         <h2>Login</h2>
 
         <div class="input_box">
-            <label for="email">
-            <input id = "email" type="email" placeholder="Enter your email" required/>
-          </label>
-
+          <input type="email" placeholder="Enter your email" required />
           <i class="uil uil-envelope-alt email"></i>
         </div>
         <div class="input_box">
-          <label for="password">
-            <input type="password" id = "password" placeholder="Enter your password" required />
-          </label>
+          <input type="password" placeholder="Enter your password" required />
           <i class="uil uil-lock password"></i>
           <i class="uil uil-eye-slash pw_hide"></i>
         </div>
@@ -617,10 +455,7 @@
         <h2>Signup</h2>
 
         <div class="input_box">
-
-          <label for="email">
-            <input type="email" placeholder="Enter your email" required />
-          </label>
+          <input type="email" placeholder="Enter your email" required />
           <i class="uil uil-envelope-alt email"></i>
         </div>
         <div class="input_box">
@@ -640,55 +475,184 @@
       </form>
     </div>
   </div>
-
+  <div>
+    <center><h1>Hlo</h1></center>
+  </div>
 </section>
-<div id = "menu" class="container">
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/>
-  <a href="beverages.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Cappuccinopic.jpg" width="200" height="150" alt="Cappuccino" class="img-responsive img-curve">
+<!--menu-->
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="mb-3">F000D</h3>
+      </div>
+      <div class="col-6 text-right">
+        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-12">
+        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-      <h3 class="float-text text-white">Beverages</h3>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                    <div class="card-body">
+                      <h4 class="card-title">Special title treatment</h4>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <!--                <div class="col-md-3 mb-5">-->
+                <!--                  <div class="card">-->
+                <!--                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">-->
+                <!--                    <div class="card-body">-->
+                <!--                      <h4 class="card-title">Special title treatment</h4>-->
+                <!--                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                <!--                      <button type="button" class="btn btn-info">Order</button>-->
+                <!--                    </div>-->
+                <!--                  </div>-->
+                <!--                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </a>
-  <a href="Breakfast.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Tiffenpic.jpg" width="200" height="150" alt="Breakfast" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Breakfast</h3>
-    </div>
-  </a>
-
-  <a href="snacks.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/soup.jpg" width="200" height="150" alt="Lunch" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Snacks</h3>
-    </div>
-  </a>
-
-  <a href="lunch.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Lunchpic.jpg" width="200" height="150"alt="Lunch" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Lunch</h3>
-    </div>
-  </a>
-  <a href="dessert.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Starterspic.jpg" width="200" height="150" alt="Starters" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Dessert</h3>
-    </div>
-  </a>
-</div>
-
-  <script>
+  </div>
+</section>
+<script>
   const formOpenBtn = document.querySelector("#form-open"),
           home = document.querySelector(".home"),
           formContainer = document.querySelector(".form_container"),
@@ -699,7 +663,6 @@
 
   formOpenBtn.addEventListener("click", () => home.classList.add("show"));
   formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
-
   pwShowHide.forEach((icon) => {
     icon.addEventListener("click", () => {
       let getPwInput = icon.parentElement.querySelector("input");

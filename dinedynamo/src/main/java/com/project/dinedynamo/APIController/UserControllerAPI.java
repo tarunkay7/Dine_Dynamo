@@ -19,9 +19,6 @@ public class UserControllerAPI {
     @PostMapping("/addUser")
     public User addUser(@RequestBody User user) {
 
-
-
-
         return userservice.addUser(user);
 
     }
@@ -36,8 +33,6 @@ public class UserControllerAPI {
     {
         return userservice.getAllUsers();
     }
-
-    
 }
 
 

@@ -46,7 +46,7 @@ public class ItemsControllerAPI {
     public String getAll(Model model){
         List<Items> items = itemsservice.getAllItems();
         model.addAttribute("items", items);
-        return "index";
+        return "home";
     }
 
     @GetMapping("/getByPrice")

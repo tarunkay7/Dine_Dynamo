@@ -25,9 +25,6 @@ public class DineDynamoApplication {
 
 		SpringApplication.run(DineDynamoApplication.class, args);
 	}
-//	@GetMapping("/my-page")
-//	public String myPage(Model model) {
-//		return "home"; // This corresponds to "home.html"
-//	}
+
 
 }

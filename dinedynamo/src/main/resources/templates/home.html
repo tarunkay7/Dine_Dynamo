@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--  <link rel="stylesheet" href="style.css" />-->
+  <!--  <link rel="stylesheet" href="style.css" />-->
   <!-- Unicons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Background animation</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+  <script type='text/javascript' src=''></script>
+  <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+  <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
   <style>
     /* Import Google font - Poppins */
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -67,12 +72,12 @@
       transform: scale(0.98);
     }
 
-    /* Home */
+/* Home */
     .home {
       position: relative;
       height: 100vh;
       width: 100%;
-      background-image: url("static/bg.jpg");
+      /*background-image: url("bg.jpg");*/
       background-size: cover;
       background-position: center;
     }
@@ -163,11 +168,13 @@
       color: #707070;
     }
     .input_box i.email,
-    .input_box i.password {
+    .input_box i.password,
+    .input_box i.phone{
       left: 0;
     }
     .input_box input:focus ~ i.email,
-    .input_box input:focus ~ i.password {
+    .input_box input:focus ~ i.password,
+    .input_box input:focus ~ i.phone{
       color: #7d2ae8;
     }
     .input_box i.pw_hide {
@@ -219,7 +226,11 @@
       margin: 0;
       padding: 0;
       font-family: 'Raleway', sans-serif;
-      background-image: url("static/bg5.jpg");
+      background-image: url("https://images.squarespace-cdn.com/content/v1/545c4607e4b0f8d97a394c9a/1668443127519-3ZNCG4ZJLH49SV9QHD4S/A.ETLING+photography+-+02.28.2022+-_DSC8769.jpg?format=2500w");
+      background-color: #aaaaaa;
+      /*background-repeat: no-repeat;*/
+      /*background-size: contain;*/
+
     }
 
     .text-container {
@@ -231,11 +242,12 @@
 
     }
 
-    .text-container h1{
+.text-container h1{
       margin: 0;
       font-size: 50px;
       color: rgba(225,225,225, .01);
-      background-image: url("static/bg.jpg");
+      background-image: url("https://t4.ftcdn.net/jpg/02/94/26/33/360_F_294263329_1IgvqNgDbhmQNgDxkhlW433uOFuIDar4.jpg");
+      background-color: #7d2ae8;
       background-repeat: repeat;
       -webkit-background-clip:text;
       animation: animate 15s ease-in-out infinite;
@@ -258,298 +270,9 @@
         background-position: right top;
       }
     }
-    .text {
-      height: 100px;
-      display: inline-block;
-      font-size: 100px;
-      line-height: 86%;
-      font-family: Modak;
-      padding-left: 7px;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-top: 0px;
-      text-shadow: 7px 7px 0px #d2d2d22e;
+    .card {
+      border: 2px solid #333;
     }
-    .heading {
-      margin-top: 30px;
-    }
-    /* .text-1 {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='200px' height='200px' viewBox='0 0 400 400'%3e%3cdefs%3e%3cfilter id='filter' width='400px' height='400px' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-color='%23f5576c' flood-opacity='1' x='0' y='0' width='250px' height='250px' result='flood3'%3e%3c/feFlood%3e%3cfeFlood flood-color='%23f093fb' flood-opacity='1' x='150px' y='150px' width='250px' height='250px' result='flood4'%3e%3c/feFlood%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood3' edgeMode='none' result='blur1'%3e%3c/feGaussianBlur%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood4' edgeMode='none' result='blur2'%3e%3c/feGaussianBlur%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur2' in2='SourceGraphic' result='blend5'%3e%3c/feBlend%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur1' in2='blend5' result='blend6'%3e%3c/feBlend%3e%3c/filter%3e%3c/defs%3e%3crect width='400' height='400' x='0' y='0' fill='%23fee140' filter='url(%23filter)'%3e%3c/rect%3e%3c/svg%3e");
-    }
-
-    .text-2 {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='200px' height='200px' viewBox='0 0 400 400'%3e%3cdefs%3e%3cfilter id='filter' width='400px' height='400px' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-color='%238fd3f4' flood-opacity='1' x='0' y='0' width='250px' height='250px' result='flood3'%3e%3c/feFlood%3e%3cfeFlood flood-color='%2396e6a1' flood-opacity='1' x='150px' y='150px' width='250px' height='250px' result='flood4'%3e%3c/feFlood%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood3' edgeMode='none' result='blur1'%3e%3c/feGaussianBlur%3e%3cfeGaussianBlur stdDeviation='50 50' x='0%25' y='0%25' width='100%25' height='100%25' in='flood4' edgeMode='none' result='blur2'%3e%3c/feGaussianBlur%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur2' in2='SourceGraphic' result='blend5'%3e%3c/feBlend%3e%3cfeBlend mode='normal' x='0%25' y='0%25' width='100%25' height='100%25' in='blur1' in2='blend5' result='blend6'%3e%3c/feBlend%3e%3c/filter%3e%3c/defs%3e%3crect width='400' height='400' x='0' y='0' fill='%23d4fc79' filter='url(%23filter)'%3e%3c/rect%3e%3c/svg%3e");
-    } */
-    *{
-      margin: 0 ;
-      padding: 0 ;
-      font-family: Arial, Helvetica, sans-serif;
-      box-sizing: border-box;
-    }
-    .container{
-      width: 80%;
-      margin: 0 auto;
-      /* padding: 1%; */
-    }
-    .img-responsive{
-      width: 100%;
-    }
-    .img-curve{
-      border-radius: 15px;
-    }
-
-    .text-right{
-      text-align: right;
-    }
-    .text-center{
-      text-align: center;
-    }
-    .text-left{
-      text-align: left;
-    }
-    .text-white{
-      color: white;
-    }
-
-    .clearfix{
-      clear: both;
-      float: none;
-    }
-
-    a{
-      color: #ff6b81;
-      text-decoration: none;
-    }
-    a:hover{
-      color: #ff4757;
-    }
-
-    .btn{
-      padding: 1%;
-      border: none;
-      font-size: 1rem;
-      border-radius: 5px;
-    }
-    .btn-primary{
-      background-color: #ff6b81;
-      color: white;
-      cursor: pointer;
-    }
-    .btn-primary:hover{
-      color: white;
-      background-color: #ff4757;
-    }
-    h1{
-      color: white;
-      font-size: 400%;
-      align-content: center;
-      font-family: "cosmic sans-serif";
-    }
-    h2{
-      color: #0d6bb8;
-      font-size: 2rem;
-      margin-bottom: 2%;
-      font-family: "cosmic sans-serif"
-    }
-    h3{
-      color: white;
-      font-size: 1.5rem;
-    }
-    h4{
-      color: black;
-    }
-    h5{
-      color: white;
-      font-size: 1.2rem;
-    }
-    .float-container{
-      position: relative;
-    }
-    .float-text{
-      position: absolute;
-      bottom: 50px;
-      left: 40%;
-    }
-    fieldset{
-      border: 1px solid white;
-      margin: 5%;
-      padding: 3%;
-      border-radius: 5px;
-    }
-    /* .abproject p{
-      color: white;
-      font-family: "cosmic sans-serif";
-      font-size: 20px;
-      margin-right: 150px;
-      margin-left: 150px;
-      padding-bottom: 50px;
-    } */
-
-    /* CSSS for navbar section */
-    /*
-    .logo{
-      width: 10%;
-      float: left;
-    }
-    .menu{
-      line-height: 60px;
-    }
-    .menu ul{
-      list-style-type: none;
-    }
-
-    .menu ul li{
-      display: inline;
-      padding: 1%;
-      font-weight: bold;
-    } */
-
-
-    /* CSS for Categories */
-    .categories{
-      padding: 4% 0;
-    }
-
-    .box-3{
-      width: 28%;
-      float: left;
-      margin: 2%;
-    }
-
-
-    /* CSS for Food Menu */
-    /* .food-menu{
-      background-color: black;
-    } */
-    .food-menu-box{
-      width: 43%;
-      margin: 3%;
-      padding: 2%;
-      float: left;
-      background-color: white;
-      border-radius: 15px;
-    }
-
-    .food-menu-img{
-      width: 20%;
-      float: left;
-    }
-
-    .food-menu-desc{
-      width: 70%;
-      float: left;
-      margin-left: 8%;
-    }
-
-    .food-price{
-      font-size: 1.2rem;
-      margin: 2% 0;
-    }
-    .food-detail{
-      font-size: 1rem;
-      color: #747d8c;
-    }
-
-
-    /* CSS for Social
-    .social ul{
-      list-style-type: none;
-    }
-    .social ul li{
-      display: inline;
-      padding: 1%;
-    } */
-
-    /* for Order Section */
-    .order{
-      width: 50%;
-      margin: 0 auto;
-    }
-    .input-responsive{
-      width: 96%;
-      padding: 1%;
-      margin-bottom: 3%;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    .order-label{
-      margin-bottom: 1%;
-      font-weight: bold;
-    }
-
-
-
-    /* CSS for Mobile Size or Smaller Screen */
-
-    @media only screen and (max-width:768px){
-      .text{
-        font-size: 300%;
-      }
-      .abproject p{
-        font-size: 20px;
-        margin-left: 10%;
-        margin-right: 10%;
-      }
-      .Timings {
-        margin-left: 15%;
-        margin-right: 15%;
-        border-left: solid white;
-        border-bottom: solid white;
-        border-right: solid white;
-        border-top: solid white;
-        border-radius: 10px;
-        padding-top: 20px;
-        padding-bottom: 30px;
-      }
-      .menu ul{
-        text-align: center;
-      }
-
-      .food-search input[type="search"]{
-        width: 90%;
-        padding: 2%;
-        margin-bottom: 3%;
-      }
-
-      .btn{
-        width: 91%;
-        padding: 2%;
-      }
-
-      .food-search{
-        padding: 3% 0 0 0;
-      }
-
-      .categories{
-        padding: 20% 0;
-      }
-      h2{
-        margin-bottom: 10%;
-      }
-      .box-3{
-        width: 100%;
-        margin: 4% auto;
-      }
-
-      .food-menu{
-        padding: 5% 0;
-      }
-
-      .food-menu-box{
-        width: 90%;
-        padding: 5%;
-        margin-bottom: 5%;
-      }
-      .social{
-        padding: 5% 0;
-      }
-      .order{
-        width: 100%;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -577,35 +300,31 @@
 <section class="home">
   <div class="form_container">
     <i class="uil uil-times form_close"></i>
+
     <!-- Login From -->
     <div class="form login_form">
       <form action="#">
         <h2>Login</h2>
 
         <div class="input_box">
-            <label for="email">
-            <input id = "email" type="email" placeholder="Enter your email" required/>
-          </label>
-
-          <i class="uil uil-envelope-alt email"></i>
+          <input type="tel" placeholder="Enter your Contact NO." required />
+          <i class="uil uil-phone-alt phone"></i>
         </div>
-        <div class="input_box">
-          <label for="password">
-            <input type="password" id = "password" placeholder="Enter your password" required />
-          </label>
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
-        </div>
+        <!--        <div class="input_box">-->
+        <!--          <input type="password" placeholder="Enter your password" required />-->
+        <!--          <i class="uil uil-lock password"></i>-->
+        <!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+        <!--        </div>-->
 
-        <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
-          <a href="#" class="forgot_pw">Forgot password?</a>
-        </div>
+        <!--        <div class="option_field">-->
+        <!--              <span class="checkbox">-->
+        <!--                <input type="checkbox" id="check" />-->
+        <!--                <label for="check">Remember me</label>-->
+        <!--              </span>-->
+        <!--          <a href="#" class="forgot_pw">Forgot password?</a>-->
+        <!--        </div>-->
 
-        <button class="button">Login Now</button>
+        <button class="button">Get OTP</button>
 
         <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
       </form>
@@ -615,24 +334,35 @@
     <div class="form signup_form">
       <form action="#">
         <h2>Signup</h2>
-
         <div class="input_box">
-
-          <label for="email">
-            <input type="email" placeholder="Enter your email" required />
-          </label>
+          <input type="text" placeholder="Enter your name" required />
+          <i class="uil uil-user user"></i>
+        </div>
+        <!-- uil:phone-->
+        <div class="input_box">
+          <input type="tel" placeholder="Enter your Roll NO." required />
+          <i class="uil uil-phone-alt phone"></i>
+        </div>
+        <div class="input_box">
+          <input type="email" placeholder="Enter your email" required />
           <i class="uil uil-envelope-alt email"></i>
         </div>
+        <!-- uil:phone-->
         <div class="input_box">
-          <input type="password" placeholder="Create password" required />
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
+          <input type="tel" placeholder="Enter your Contact NO." required />
+          <i class="uil uil-phone-alt phone"></i>
         </div>
-        <div class="input_box">
-          <input type="password" placeholder="Confirm password" required />
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
-        </div>
+
+        <!--        <div class="input_box">-->
+        <!--          <input type="password" placeholder="Create password" required />-->
+        <!--          <i class="uil uil-lock password"></i>-->
+        <!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+        <!--        </div>-->
+        <!--        <div class="input_box">-->
+        <!--          <input type="password" placeholder="Confirm password" required />-->
+        <!--          <i class="uil uil-lock password"></i>-->
+        <!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+        <!--        </div>-->
 
         <button class="button">Signup Now</button>
 
@@ -640,66 +370,237 @@
       </form>
     </div>
   </div>
+  <div class="container mt-3">
 
+    <div id="mySlideshow" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#mySlideshow" data-slide-to="0" class="active"></li>
+        <li data-target="#mySlideshow" data-slide-to="1"></li>
+        <li data-target="#mySlideshow" data-slide-to="2"></li>
+      </ul>
+
+      <!-- Slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://i.ndtvimg.com/i/2016-07/vada_625x350_51469265044.jpg"alt="Slide 1" height="500">
+          <div class="carousel-caption">
+            <h1>VADA</h1>
+            <p>Today's specials!!!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/dosa.jpg" alt="Slide 2" height="500">
+          <div class="carousel-caption">
+            <h1>DOSA</h1>
+            <p>Today's specials!!!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg" alt="Slide 3" height="500">
+          <div class="carousel-caption">
+            <h1>POORI</h1>
+            <p>Today's specials!!!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#mySlideshow" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#mySlideshow" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
 </section>
-<div id = "menu" class="container">
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-  <br/>
-  <a href="beverages.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Cappuccinopic.jpg" width="200" height="150" alt="Cappuccino" class="img-responsive img-curve">
+<!--menu-->
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="mb-3">F000D</h3>
+      </div>
+      <div class="col-6 text-right">
+        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-12">
+        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-      <h3 class="float-text text-white">Beverages</h3>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/veg_fried_rice.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Veg Friedrice</h4>
+                      <p class="card-text">Served with Garlic Sauce and Raitha. </p>
+                      <p>Rs.70</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="Custom Size Image" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Poori</h4>
+                      <p class="card-text">Served with Aloo curry and Chutney.</p>
+                      <p>Rs.25</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/noodle.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Noodles</h4>
+                      <p class="card-text">Served with tomato sauce and chilli sauce.</p>
+                      <p>Rs.50</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/full_meal.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Full Meals</h4>
+                      <p class="card-text">Served with 5 different curries ,sambar and curd.</p>
+                      <p>Rs.60</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/egg_fried_rice.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Egg Fried Rice</h4>
+                      <p class="card-text">Served with Sauce and Raitha.</p>
+                      <p>Rs.70</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/dosa.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Dosa</h4>
+                      <p class="card-text">Served with sambar and chutney.</p>
+                      <p>Rs.25</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/samosa.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Samosa</h4>
+                      <p class="card-text">Served with sauce and Chiili .</p>
+                      <p>Rs.25</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/puffs.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Puff</h4>
+                      <p class="card-text">Served hot with tomato sauce.</p>
+                      <p>Rs.25</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chilly_chicken.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Chilli Chicken</h4>
+                      <p class="card-text">Served with lemon and onion.</p>
+                      <p>Rs.100</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chicken_biryani.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Chicken Biryani</h4>
+                      <p class="card-text">Served with salan and raitha.</p>
+                      <p>Rs.100</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/breakfast.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Sandwich</h4>
+                      <p class="card-text">Veg/Non veg</p>
+                      <div>Tasty dips provided</div>
+                      <p>Rs.40</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                  <div class="card">
+                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/ice_cream.jpg" style="width: 300px; height: 200px;">
+                    <div class="card-body">
+                      <h4 class="card-title">Ice cream</h4>
+                      <p class="card-text">Chocolate/Vanilla/Butterscotch/Strawberrry.</p>
+                      <p>Rs.40</p>
+                      <button type="button" class="btn btn-info">Order</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </a>
-  <a href="Breakfast.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Tiffenpic.jpg" width="200" height="150" alt="Breakfast" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Breakfast</h3>
-    </div>
-  </a>
-
-  <a href="snacks.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/soup.jpg" width="200" height="150" alt="Lunch" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Snacks</h3>
-    </div>
-  </a>
-
-  <a href="lunch.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Lunchpic.jpg" width="200" height="150"alt="Lunch" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Lunch</h3>
-    </div>
-  </a>
-  <a href="dessert.html">
-    <div class="box-3 float-container">
-      <img src="images/Categories/Starterspic.jpg" width="200" height="150" alt="Starters" class="img-responsive img-curve">
-
-      <h3 class="float-text text-white">Dessert</h3>
-    </div>
-  </a>
-</div>
-
-  <script>
+  </div>
+</section>
+<script>
   const formOpenBtn = document.querySelector("#form-open"),
           home = document.querySelector(".home"),
           formContainer = document.querySelector(".form_container"),
           formCloseBtn = document.querySelector(".form_close"),
           signupBtn = document.querySelector("#signup"),
           loginBtn = document.querySelector("#login"),
-          pwShowHide = document.querySelectorAll(".pw_hide");
+          OTPBtn = document.querySelector("#otp"),
+pwShowHide = document.querySelectorAll(".pw_hide");
 
   formOpenBtn.addEventListener("click", () => home.classList.add("show"));
   formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
-
   pwShowHide.forEach((icon) => {
     icon.addEventListener("click", () => {
       let getPwInput = icon.parentElement.querySelector("input");
@@ -720,6 +621,10 @@
   loginBtn.addEventListener("click", (e) => {
     e.preventDefault();
     formContainer.classList.remove("active");
+  });
+  OTPBtn.addEventListener("click",(e)=>{
+      e.preventDefault();
+      formContainer.classList.add("active");
   });
 
 </script>

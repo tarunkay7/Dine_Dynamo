@@ -58,6 +58,14 @@
 		</dependency>
 
 
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-text</artifactId>
+				<version>1.10.0</version> <!-- Use the latest version -->
+			</dependency>
+
+
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

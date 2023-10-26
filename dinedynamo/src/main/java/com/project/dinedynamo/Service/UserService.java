@@ -1,13 +1,10 @@
 package com.project.dinedynamo.Service;
 
-import com.project.dinedynamo.Entities.Items;
 import com.project.dinedynamo.Entities.User;
 import com.project.dinedynamo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,10 +14,12 @@ public class UserService {
     @Autowired
     UserRepository userrepository;
 
-    public User addUser(User user) {
-        user.setCart(new ArrayList<>());
-        user.setAdmin(false);
-        return userrepository.save(user);
+    @Autowired
+    OTPService otpService;
+
+    public void addUser(String name, String rollNumber, String phoneNumber ) {
+        User user = new User(name, rollNumber, phoneNumber);
+        userrepository.save(user);
     }
 
     public User getUserDetailsByName(String name) {
@@ -29,6 +28,10 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return userrepository.findAll();
+    }
+
+    public boolean checkIfPhoneNumberExists(String phoneNumber) {
+        return userrepository.existsByPhoneNumber(phoneNumber);
     }
 }
 

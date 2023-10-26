@@ -23,8 +23,12 @@ public class User {
 
     private boolean isAdmin;
 
-
-
-
+    public User(String name, String rollNumber, String phoneNumber) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.phoneNumber = phoneNumber;
+        this.cart = new ArrayList<>();
+        this.isAdmin = false;
+    }
 
 }

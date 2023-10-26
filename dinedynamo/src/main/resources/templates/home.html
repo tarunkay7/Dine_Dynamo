@@ -168,11 +168,13 @@
       color: #707070;
     }
     .input_box i.email,
-    .input_box i.password {
+    .input_box i.password,
+    .input_box i.phone{
       left: 0;
     }
     .input_box input:focus ~ i.email,
-    .input_box input:focus ~ i.password {
+    .input_box input:focus ~ i.password,
+    .input_box input:focus ~ i.phone{
       color: #7d2ae8;
     }
     .input_box i.pw_hide {
@@ -298,30 +300,31 @@
 <section class="home">
   <div class="form_container">
     <i class="uil uil-times form_close"></i>
+
     <!-- Login From -->
     <div class="form login_form">
       <form action="#">
         <h2>Login</h2>
 
-        <div class="input_box">
-          <input type="email" placeholder="Enter your email" required />
-          <i class="uil uil-envelope-alt email"></i>
-        </div>
-        <div class="input_box">
-          <input type="password" placeholder="Enter your password" required />
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
-        </div>
+          <div class="input_box">
+              <input type="tel" placeholder="Enter your Contact NO." required />
+              <i class="uil uil-phone-alt phone"></i>
+          </div>
+<!--        <div class="input_box">-->
+<!--          <input type="password" placeholder="Enter your password" required />-->
+<!--          <i class="uil uil-lock password"></i>-->
+<!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+<!--        </div>-->
 
-        <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
-          <a href="#" class="forgot_pw">Forgot password?</a>
-        </div>
+<!--        <div class="option_field">-->
+<!--              <span class="checkbox">-->
+<!--                <input type="checkbox" id="check" />-->
+<!--                <label for="check">Remember me</label>-->
+<!--              </span>-->
+<!--          <a href="#" class="forgot_pw">Forgot password?</a>-->
+<!--        </div>-->
 
-        <button class="button">Login Now</button>
+        <button class="button">Get OTP</button>
 
         <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
       </form>
@@ -331,21 +334,35 @@
     <div class="form signup_form">
       <form action="#">
         <h2>Signup</h2>
-
-        <div class="input_box">
+          <div class="input_box">
+              <input type="text" placeholder="Enter your name" required />
+              <i class="uil uil-user user"></i>
+          </div>
+          <!-- uil:phone-->
+          <div class="input_box">
+              <input type="tel" placeholder="Enter your Roll NO." required />
+              <i class="uil uil-phone-alt phone"></i>
+          </div>
+          <div class="input_box">
           <input type="email" placeholder="Enter your email" required />
           <i class="uil uil-envelope-alt email"></i>
         </div>
+        <!-- uil:phone-->
         <div class="input_box">
-          <input type="password" placeholder="Create password" required />
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
+          <input type="tel" placeholder="Enter your Contact NO." required />
+          <i class="uil uil-phone-alt phone"></i>
         </div>
-        <div class="input_box">
-          <input type="password" placeholder="Confirm password" required />
-          <i class="uil uil-lock password"></i>
-          <i class="uil uil-eye-slash pw_hide"></i>
-        </div>
+
+<!--        <div class="input_box">-->
+<!--          <input type="password" placeholder="Create password" required />-->
+<!--          <i class="uil uil-lock password"></i>-->
+<!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+<!--        </div>-->
+<!--        <div class="input_box">-->
+<!--          <input type="password" placeholder="Confirm password" required />-->
+<!--          <i class="uil uil-lock password"></i>-->
+<!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+<!--        </div>-->
 
         <button class="button">Signup Now</button>
 
@@ -367,24 +384,24 @@
       <!-- Slideshow -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg"alt="Slide 1" height="500">
+          <img class="d-block w-100" src="https://i.ndtvimg.com/i/2016-07/vada_625x350_51469265044.jpg"alt="Slide 1" height="500">
           <div class="carousel-caption">
-            <h1>First Slide</h1>
-            <p>This is the first slide.</p>
+            <h1>VADA</h1>
+            <p>Today's specials!!!</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ywIijt0EGxn7Zc7tXPcMRfvBEPw__2noZg&usqp=CAU" alt="Slide 2" height="500">
+          <img class="d-block w-100" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/dosa.jpg" alt="Slide 2" height="500">
           <div class="carousel-caption">
-            <h1>Second Slide</h1>
-            <p>This is the second slide.</p>
+            <h1>DOSA</h1>
+            <p>Today's specials!!!</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_ywIijt0EGxn7Zc7tXPcMRfvBEPw__2noZg&usqp=CAU" alt="Slide 3" height="500">
+          <img class="d-block w-100" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg" alt="Slide 3" height="500">
           <div class="carousel-caption">
-            <h1>Third Slide</h1>
-            <p>This is the third slide.</p>
+            <h1>POORI</h1>
+            <p>Today's specials!!!</p>
           </div>
         </div>
       </div>
@@ -401,166 +418,176 @@
 </section>
 <!--menu-->
 <section class="pt-5 pb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h3 class="mb-3">F000D</h3>
-      </div>
-      <div class="col-6 text-right">
-        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-          <i class="fa fa-arrow-left"></i>
-        </a>
-        <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-          <i class="fa fa-arrow-right"></i>
-        </a>
-      </div>
-      <div class="col-12">
-        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/veg_fried_rice.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="Custom Size Image" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/noodle.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/full_meal.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">F000D</h3>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/egg_fried_rice.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/dosa.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/samosa.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/puffs.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
             </div>
-            <div class="carousel-item">
-              <div class="row">
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chilly_chicken.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/veg_fried_rice.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Veg Friedrice</h4>
+                                            <p class="card-text">Served with Garlic Sauce and Raitha. </p>
+                                            <p>Rs.70</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="Custom Size Image" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/poori.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Poori</h4>
+                                            <p class="card-text">Served with Aloo curry and Chutney.</p>
+                                            <p>Rs.25</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/noodle.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Noodles</h4>
+                                            <p class="card-text">Served with tomato sauce and chilli sauce.</p>
+                                            <p>Rs.50</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/full_meal.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Full Meals</h4>
+                                            <p class="card-text">Served with 5 different curries ,sambar and curd.</p>
+                                            <p>Rs.60</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chicken_biryani.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/egg_fried_rice.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Egg Fried Rice</h4>
+                                            <p class="card-text">Served with Sauce and Raitha.</p>
+                                            <p>Rs.70</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/dosa.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Dosa</h4>
+                                            <p class="card-text">Served with sambar and chutney.</p>
+                                            <p>Rs.25</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/samosa.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Samosa</h4>
+                                            <p class="card-text">Served with sauce and Chiili .</p>
+                                            <p>Rs.25</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/puffs.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Puff</h4>
+                                            <p class="card-text">Served hot with tomato sauce.</p>
+                                            <p>Rs.25</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chilly_chicken.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Chilli Chicken</h4>
+                                            <p class="card-text">Served with lemon and onion.</p>
+                                            <p>Rs.100</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/chicken_biryani.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Chicken Biryani</h4>
+                                            <p class="card-text">Served with salan and raitha.</p>
+                                            <p>Rs.100</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/breakfast.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Sandwich</h4>
+                                            <p class="card-text">Veg/Non veg</p>
+                                            <div>Tasty dips provided</div>
+                                            <p>Rs.40</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-5">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/ice_cream.jpg" style="width: 300px; height: 200px;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Ice cream</h4>
+                                            <p class="card-text">Chocolate/Vanilla/Butterscotch/Strawberrry.</p>
+                                            <p>Rs.40</p>
+                                            <button type="button" class="btn btn-info">Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/breakfast.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 mb-5">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://dinedynamomenuimages.s3.ap-south-1.amazonaws.com/ice_cream.jpg" style="width: 300px; height: 200px;">
-                    <div class="card-body">
-                      <h4 class="card-title">Special title treatment</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <button type="button" class="btn btn-info">Order</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <script>
   const formOpenBtn = document.querySelector("#form-open"),
@@ -569,6 +596,7 @@
           formCloseBtn = document.querySelector(".form_close"),
           signupBtn = document.querySelector("#signup"),
           loginBtn = document.querySelector("#login"),
+          OTPBtn = document.querySelector("#otp"),
           pwShowHide = document.querySelectorAll(".pw_hide");
 
   formOpenBtn.addEventListener("click", () => home.classList.add("show"));
@@ -593,6 +621,10 @@
   loginBtn.addEventListener("click", (e) => {
     e.preventDefault();
     formContainer.classList.remove("active");
+  });
+  OTPBtn.addEventListener("click",(e)=>{
+      e.preventDefault();
+      formContainer.classList.add("active");
   });
 
 </script>

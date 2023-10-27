@@ -43,6 +43,15 @@
             color: #007bff; /* Blue color for the link */
         }
     </style>
+    <style>
+        body {
+            background-image: url('https://images.squarespace-cdn.com/content/v1/545c4607e4b0f8d97a394c9a/1668443127519-3ZNCG4ZJLH49SV9QHD4S/A.ETLING+photography+-+02.28.2022+-_DSC8769.jpg?format=2500w'); /* Replace 'your-image.jpg' with the actual file name of your image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -53,8 +62,11 @@
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number:</label>
                     <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+
                 </div>
+
                 <input type="submit" value="Check Phone Number" class="btn btn-primary btn-block">
+                <div class="login_signup">Don't have an account? <a href="signup.html" id="signup">Signup</a></div>
             </form>
 
             <div class="otp-box" id="otpBox">
@@ -66,10 +78,11 @@
                     </div>
                     <input type="hidden" id="otpPhoneNumber" name="phoneNumber">
                     <input type="submit" value="Submit OTP" class="btn btn-primary btn-block">
+
                 </form>
             </div>
 
-            <div class="login_signup">Don't have an account? <a href="signup.html" id="signup">Signup</a></div>
+
         </div>
     </div>
 </div>

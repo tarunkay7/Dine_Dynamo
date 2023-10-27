@@ -23,9 +23,10 @@
 
 <div class="otp-box" id="otpBox">
     <h2>Enter OTP</h2>
-    <form id="otpForm" action="/generateotp" method="POST"> <!-- Change the form action to /generateotp -->
+    <form id="otpForm" action="/api/v1/verifyOTP" method="POST">
         <label for="otp">OTP:</label>
         <input type="text" id="otp" name="otp" required><br><br>
+        <input type="hidden" id="otpPhoneNumber" name="phoneNumber">
         <input type="submit" value="Submit OTP">
     </form>
 </div>
@@ -38,6 +39,10 @@
         event.preventDefault();
 
         const phoneNumber = document.getElementById("phoneNumber").value;
+
+        // Set the phone number in the hidden input field in the OTP form
+        const otpPhoneNumberInput = document.getElementById("otpPhoneNumber");
+        otpPhoneNumberInput.value = phoneNumber;
 
         // Make an AJAX request to the server to check if the phone number exists
         fetch("/api/v1/checkPhoneNumber?phoneNumber=" + phoneNumber)
@@ -57,7 +62,5 @@
             });
     });
 </script>
-
-<h1>jfjhgjhgjhgjh</h1>
 </body>
 </html>

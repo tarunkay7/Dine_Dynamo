@@ -33,5 +33,9 @@ public class UserService {
     public boolean checkIfPhoneNumberExists(String phoneNumber) {
         return userrepository.existsByPhoneNumber(phoneNumber);
     }
+
+    public User getUserByPhoneNumber(String phoneNumber) {
+        return userrepository.findByPhoneNumber(phoneNumber);
+    }
 }
 

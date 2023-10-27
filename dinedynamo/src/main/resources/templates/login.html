@@ -3,34 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>DineDynamo &bull; Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* CSS for the OTP box */
+        body {
+            background-color: #f0f8ff; /* Light blue background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Style the login form */
+        #phoneForm {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the OTP box */
         .otp-box {
             display: none; /* Initially hidden */
             border: 1px solid #ccc;
             padding: 10px;
             margin-top: 20px;
         }
+
+        /* Style the "Don't have an account?" link */
+        .login_signup {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Style the signup link */
+        #signup {
+            color: #007bff; /* Blue color for the link */
+        }
+    </style>
+    <style>
+        body {
+            background-image: url('https://images.squarespace-cdn.com/content/v1/545c4607e4b0f8d97a394c9a/1668443127519-3ZNCG4ZJLH49SV9QHD4S/A.ETLING+photography+-+02.28.2022+-_DSC8769.jpg?format=2500w'); /* Replace 'your-image.jpg' with the actual file name of your image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     </style>
 </head>
 <body>
-<h1>Login with Phone Number</h1>
-<form id="phoneForm" method="POST">
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
-    <input type="submit" value="Check Phone Number">
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="phoneForm" method="POST">
+                <h2 class="font-weight-normal">Login with your Phone Number</h2>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
 
-<div class="otp-box" id="otpBox">
-    <h2>Enter OTP</h2>
-    <form id="otpForm" action="/api/v1/verifyOTP" method="POST">
-        <label for="otp">OTP:</label>
-        <input type="text" id="otp" name="otp" required><br><br>
-        <input type="hidden" id="otpPhoneNumber" name="phoneNumber">
-        <input type="submit" value="Submit OTP">
-    </form>
+                </div>
+
+                <input type="submit" value="Check Phone Number" class="btn btn-primary btn-block">
+                <div class="login_signup">Don't have an account? <a href="signup.html" id="signup">Signup</a></div>
+            </form>
+
+            <div class="otp-box" id="otpBox">
+                <h2>Enter OTP</h2>
+                <form id="otpForm" action="/api/v1/verifyOTP" method="POST">
+                    <div class="form-group">
+                        <label for="otp">OTP:</label>
+                        <input type="text" id="otp" name="otp" class="form-control" required>
+                    </div>
+                    <input type="hidden" id="otpPhoneNumber" name="phoneNumber">
+                    <input type="submit" value="Submit OTP" class="btn btn-primary btn-block">
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     const phoneForm = document.getElementById("phoneForm");
     const otpBox = document.getElementById("otpBox");
@@ -44,22 +103,17 @@
         const otpPhoneNumberInput = document.getElementById("otpPhoneNumber");
         otpPhoneNumberInput.value = phoneNumber;
 
-        // Make an AJAX request to the server to check if the phone number exists
-        fetch("/api/v1/checkPhoneNumber?phoneNumber=" + phoneNumber)
-            .then(response => response.json())
-            .then(data => {
-                if (data.exists) {
-                    // If the phone number exists, hide the phone form and show the OTP box
-                    phoneForm.style.display = "none";
-                    otpBox.style.display = "block";
-                } else {
-                    // Handle the case where the phone number doesn't exist (e.g., show an error message)
-                    alert("Phone number does not exist.");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+        // Simulate a response from the server (in a real application, you would make an AJAX request)
+        const phoneExists = true; // You can change this value to test different scenarios
+
+        if (phoneExists) {
+            // If the phone number exists, hide the phone form and show the OTP box
+            phoneForm.style.display = "none";
+            otpBox.style.display = "block";
+        } else {
+            // Handle the case where the phone number doesn't exist (e.g., show an error message)
+            alert("Phone number does not exist.");
+        }
     });
 </script>
 </body>

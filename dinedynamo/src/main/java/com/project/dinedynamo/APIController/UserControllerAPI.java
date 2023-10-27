@@ -87,8 +87,13 @@ public class UserControllerAPI {
     @PostMapping("/login")
     public ModelAndView login()
     {
-        System.out.println("Invalid OTP");
         ModelAndView modelAndView = new ModelAndView("redirect:/login");
+        return modelAndView;
+    }
+    @PostMapping("/signup")
+    public ModelAndView signup()
+    {
+        ModelAndView modelAndView = new ModelAndView("redirect:/signup");
         return modelAndView;
     }
 }

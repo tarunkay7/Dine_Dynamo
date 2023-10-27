@@ -35,6 +35,7 @@ public class OTPService {
     }
 
     private void sendOTP(String phoneNumber, String otp) {
+        System.out.println("otp is " + otp);
         // Construct an OTP message
         String message = "Your OTP is: " + otp;
 

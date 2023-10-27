@@ -6,9 +6,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.result.view.RedirectView;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,26 +50,40 @@ public class UserControllerAPI {
     }
 
     @PostMapping("/verifyOTP")
-    public RedirectView verifyOTP(
+    public ModelAndView verifyOTP(
             @RequestParam("phoneNumber") String phoneNumber,
             @RequestParam("otp") String userOTP,
-            HttpServletRequest request
+            HttpServletRequest request,
+            RedirectAttributes redirectAttributes
     ) {
-
         if (otpService.verifyOTP(phoneNumber, userOTP)) {
             System.out.println("OTP verified successfully");
 
-            //start a session
+            // Start a session
             HttpSession session = request.getSession();
             session.setAttribute("phoneNumber", phoneNumber);
 
-
-            return new RedirectView("/dashboard");
+            // Redirect to the dashboard page in a different controller
+            ModelAndView modelAndView = new ModelAndView("redirect:/dashboard");
+            return modelAndView;
         } else {
             System.out.println("Invalid OTP");
-            return new RedirectView("/login");
+            ModelAndView modelAndView = new ModelAndView("redirect:/login");
+            return modelAndView;
         }
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        // Perform any necessary session cleanup
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+
+        // Redirect to the login page or another appropriate page
+        return "redirect:/login";
     }
+}
 
 

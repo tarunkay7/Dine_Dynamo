@@ -57,4 +57,8 @@ public class WebViewController {
         // redirect to the login page
         return "redirect:/login";
     }
+    @GetMapping("/home")
+    public String homepage() {
+        return "home"; // Return the name of the HTML file (without the extension)
+    }
 }

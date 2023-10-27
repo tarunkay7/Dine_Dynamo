@@ -84,6 +84,13 @@ public class UserControllerAPI {
         // Redirect to the login page or another appropriate page
         return "redirect:/login";
     }
+    @PostMapping("/login")
+    public ModelAndView login()
+    {
+        System.out.println("Invalid OTP");
+        ModelAndView modelAndView = new ModelAndView("redirect:/login");
+        return modelAndView;
+    }
 }
 
 

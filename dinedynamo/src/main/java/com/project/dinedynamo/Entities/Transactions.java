@@ -19,7 +19,7 @@ public class Transactions {
 
     private String phoneNumber;
     private List<String> orders;
-    private LocalDateTime time;
+    private LocalDateTime datetime;
     private int total;
 
 }

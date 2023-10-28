@@ -1,6 +1,8 @@
 package com.project.dinedynamo.Controller;
 
+import com.project.dinedynamo.Entities.Items;
 import com.project.dinedynamo.Entities.User;
+import com.project.dinedynamo.Service.ItemsService;
 import com.project.dinedynamo.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import java.lang.annotation.Repeatable;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -20,6 +23,9 @@ public class WebViewController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    ItemsService itemsService;
 
     @GetMapping("/signup")
     public String signuppage() {
@@ -40,8 +46,12 @@ public class WebViewController {
         // get the user by phone number
         User user = userService.getUserByPhoneNumber(phoneNumber);
 
+        List<Items> items = itemsService.getAllItems();
+
         // add the user attributes to the model
         model.addAttribute("name", user.getName());
+        model.addAttribute("rollNumber", user.getRollNumber());
+        model.addAttribute("allitems", items);
 
         return "dashboard";
     }

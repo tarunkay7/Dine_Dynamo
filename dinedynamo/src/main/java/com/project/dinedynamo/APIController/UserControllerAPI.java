@@ -1,5 +1,9 @@
 package com.project.dinedynamo.APIController;
 
+import com.project.dinedynamo.Entities.Items;
+import com.project.dinedynamo.Entities.User;
+import com.project.dinedynamo.JavaEmailService;
+import com.project.dinedynamo.Service.ItemsService;
 import com.project.dinedynamo.Service.OTPService;
 import com.project.dinedynamo.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -23,6 +28,12 @@ public class UserControllerAPI {
 
     @Autowired
     OTPService otpService;
+
+    @Autowired
+    ItemsService itemsService;
+
+    @Autowired
+    JavaEmailService javaemailservice;
 
     @PostMapping("/createUser")
     public String createUser(
@@ -96,6 +107,37 @@ public class UserControllerAPI {
         ModelAndView modelAndView = new ModelAndView("redirect:/signup");
         return modelAndView;
     }
+
+
+    @PostMapping("/sendEmail")
+    public ModelAndView sendEmail(HttpSession session) {
+        String phoneNumber = (String) session.getAttribute("phoneNumber");
+        User user = userService.getUserByPhoneNumber(phoneNumber);
+        String email = user.getRollNumber()+ "@klh.edu.in";
+        String message = "Hey " + user.getName() + ",\n\nYour Order Summary:\n\n";
+
+        List<Items> cart = user.getCart();
+        double total = 0.0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            Items item = cart.get(i);
+            // Fetch the item details from the "items" collection based on item ID
+            Items itemDetails = itemsService.getItemByName(item.getName());
+
+            if (itemDetails != null) {
+                message += (i + 1) + ". " + itemDetails.getName() + " - $" + itemDetails.getPrice() + "\n";
+                total += itemDetails.getPrice();
+            }
+        }
+        message += "\nTotal: $" + total;
+        String subject = "DineDynamo Order Summary";
+        javaemailservice.message(email, subject, message);
+        ModelAndView modelAndView = new ModelAndView("redirect:/success");
+
+        return modelAndView;
+    }
+
+
 }
 
 

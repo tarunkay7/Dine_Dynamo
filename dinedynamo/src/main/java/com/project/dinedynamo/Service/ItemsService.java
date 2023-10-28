@@ -32,6 +32,7 @@ public class ItemsService {
     }
 
 
-
-
+    public Items getItemByName(String name) {
+        return itemsrepository.findByName(name);
+    }
 }

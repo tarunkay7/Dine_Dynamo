@@ -52,7 +52,6 @@ public class WebViewController {
         model.addAttribute("name", user.getName());
         model.addAttribute("rollNumber", user.getRollNumber());
         model.addAttribute("allitems", items);
-
         return "dashboard";
     }
 

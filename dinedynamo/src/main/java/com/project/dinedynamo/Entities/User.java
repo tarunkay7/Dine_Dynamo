@@ -19,7 +19,7 @@ public class User {
     private String name;
     private String rollNumber;
     private String phoneNumber;
-    private List<Items> cart;
+    private List<String> cart;
 
     private boolean isAdmin;
 

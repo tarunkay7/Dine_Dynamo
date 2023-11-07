@@ -37,5 +37,18 @@ public class UserService {
     public User getUserByPhoneNumber(String phoneNumber) {
         return userrepository.findByPhoneNumber(phoneNumber);
     }
+
+    public boolean addToCart(String phoneNumber, String itemName) {
+        User user = userrepository.findByPhoneNumber(phoneNumber);
+        if (user != null) {
+            boolean added = user.getCart().add(itemName);
+            if (added) {
+                userrepository.save(user);
+            }
+            return added;
+        }
+        return false;
+    }
+
 }
 

@@ -54,7 +54,7 @@ public class WebViewController {
         // add the user attributes to the model
         model.addAttribute("name", user.getName());
         model.addAttribute("rollNumber", user.getRollNumber());
-        model.addAttribute("allitems", items);
+        model.addAttribute("items", items);
         return "dashboard";
     }
 

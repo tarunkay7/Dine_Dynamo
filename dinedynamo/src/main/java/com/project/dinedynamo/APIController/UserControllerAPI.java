@@ -44,8 +44,7 @@ public class UserControllerAPI {
         System.out.println("Creating user with name: " + name + ", roll number: " + rollNumber + ", and phone number: " + phoneNumber);
 
         userService.addUser(name, rollNumber, phoneNumber);
-        ModelAndView modelAndView = new ModelAndView("redirect:/login");
-        return modelAndView;
+        return new ModelAndView("redirect:/login");
     }
 
     @GetMapping("/checkPhoneNumber")
@@ -78,11 +77,9 @@ public class UserControllerAPI {
 
         } else {
             System.out.println("Invalid OTP");
-            ModelAndView modelAndView = new ModelAndView("redirect:/login");
-            return modelAndView;
+            return new ModelAndView("redirect:/login");
         }
-        ModelAndView modelAndView = new ModelAndView("redirect:/dashboard");
-        return modelAndView;
+        return new ModelAndView("redirect:/dashboard");
     }
 
     @GetMapping("/logout")
@@ -99,63 +96,57 @@ public class UserControllerAPI {
     @PostMapping("/login")
     public ModelAndView login()
     {
-        ModelAndView modelAndView = new ModelAndView("redirect:/login");
-        return modelAndView;
+        return new ModelAndView("redirect:/login");
     }
     @PostMapping("/signup")
     public ModelAndView signup()
     {
-        ModelAndView modelAndView = new ModelAndView("redirect:/signup");
-        return modelAndView;
+        return new ModelAndView("redirect:/signup");
     }
 
 
-//    @PostMapping("/sendEmail")
-//    public ModelAndView sendEmail(HttpSession session) {
-//        String phoneNumber = (String) session.getAttribute("phoneNumber");
-//        User user = userService.getUserByPhoneNumber(phoneNumber);
-//        String email = user.getRollNumber()+ "@klh.edu.in";
-//        String message = "Hey " + user.getName() + ",\n\nYour Order Summary:\n\n";
-//
-//        List<String> cart = user.getCart();
-//        double total = 0.0;
-//
-//        for (int i = 0; i < cart.size(); i++) {
-//            Items item = cart.get(i);
-//            // Fetch the item details from the "items" collection based on item ID
-//            Items itemDetails = itemsService.getItemByName(item.getName());
-//
-//            if (itemDetails != null) {
-//                message += (i + 1) + ". " + itemDetails.getName() + " - $" + itemDetails.getPrice() + "\n";
-//                total += itemDetails.getPrice();
-//            }
-//        }
-//        message += "\nTotal: $" + total;
-//        String subject = "DineDynamo Order Summary";
-//        javaemailservice.message(email, subject, message);
-//        ModelAndView modelAndView = new ModelAndView("redirect:/success");
-//
-//        return modelAndView;
-//    }
+    @PostMapping("/sendEmail")
+    public ModelAndView sendEmail(HttpSession session) {
+        String phoneNumber = (String) session.getAttribute("phoneNumber");
+        User user = userService.getUserByPhoneNumber(phoneNumber);
+        String email = user.getRollNumber()+ "@klh.edu.in";
+        String message = "Hey " + user.getName() + ",\n\nYour Order Summary:\n\n";
+
+        List<String> cart = user.getCart();
+        double total = 0.0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            String item = cart.get(i);
+            // Fetch the item details from the "items" collection based on item ID
+            Items itemDetails = itemsService.getItemByName(item);
+
+            if (itemDetails != null) {
+                message += (i + 1) + ". " + itemDetails.getName() + " - $" + itemDetails.getPrice() + "\n";
+                total += itemDetails.getPrice();
+            }
+        }
+        message += "\nTotal: $" + total;
+        String subject = "DineDynamo Order Summary";
+        javaemailservice.message(email, subject, message);
+
+        return new ModelAndView("redirect:/success");
+    }
 
     @PostMapping("/addItemToCart")
     public ModelAndView addItemToCart(
-            @RequestParam("name") String itemName,
-            @RequestParam("price") String itemPrice,
+            @RequestParam("name") String itemname,
             HttpSession session
     ) {
-        // Retrieve the user's phone number from the session
-        String userPhoneNumber = (String) session.getAttribute("phoneNumber");
-
-        if (userPhoneNumber != null) {
-            userService.addToCart(userPhoneNumber, itemName);
-        }
-
-        ModelAndView modelAndView = new ModelAndView("redirect:/items");
-        return modelAndView;
+        String phoneNumber = (String) session.getAttribute("phoneNumber");
+        userService.addToCart(phoneNumber,itemname);
+        return new ModelAndView("redirect:/dashboard");
     }
 
-}
 
+
+
+
+
+}
 
 

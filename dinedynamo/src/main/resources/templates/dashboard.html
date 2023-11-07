@@ -25,13 +25,13 @@
         a {
             text-decoration: none;
         }
-        .header {
-            position: fixed;
-            height: 80px;
-            width: 100%;
-            z-index: 100;
-            padding: 0 20px;
-        }
+        /*.header {*/
+        /*    position: fixed;*/
+        /*    height: 80px;*/
+        /*    width: 100%;*/
+        /*    z-index: 100;*/
+        /*    padding: 0 20px;*/
+        /*}*/
         .nav {
             max-width: 1100px;
             width: 100%;
@@ -143,24 +143,22 @@
     </style>
 </head>
 <body>
-<header class="header">
-    <nav class="nav">
-        <a href="#" class="nav_logo">DineDynamo</a>
-        <form method="POST" action="/logout">
-            <ul class="nav_items">
-                <li class="nav_item">
-                    <div><span th:text="${rollNumber}"></span></div>
-                </li>
-            </ul>
-            <div class="nav_link"><span th:text="${name}"></span>!</div>
-            <button type="submit" class="button">Logout</button>
-        </form>
-    </nav>
-</header>
+<nav class="nav">
+    <a href="#" class="nav_logo">DineDynamo</a>
+    <form method="POST" action="/logout">
+        <ul class="nav_items">
+            <li class="nav_item">
+                <div><span th:text="${rollNumber}"></span></div>
+            </li>
+        </ul>
+        <div class="nav_link"><span th:text="${name}"></span>!</div>
+        <button type="submit" class="button">Logout</button>
+    </form>
+</nav>
 <section class="home">
     <div class="container mt-4">
         <div class="row">
-            <div th:each="item, iterStat : ${items}" class="col-md-4">
+            <div th:each="item : ${items}" class="col-md-4">
                 <div class="card mb-4">
                     <img th:src="${item.image}" class="card-img-top" alt="Item Image">
                     <div class="card-body">
@@ -169,52 +167,19 @@
                         <p class="card-text" th:text="'Price: ₹' + ${item.price}"></p>
                     </div>
                     <div class="card-footer" style="background-color: #C6EBBE;">
-                        <button class="btn btn-success float-right">Add to Cart</button>
+                        <form th:action="@{api/v1/addItemToCart}" method="post">
+                            <input type="hidden" name="name" th:value="${item.name}" />
+                            <button class="btn btn-success float-right">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
                 <!-- Use iterStat.index to add spacing and start a new row every 3 items -->
-                <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
+                <div th:if="${itemStat.index % 3 == 2}" class="w-100"></div>
             </div>
         </div>
     </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-<script>
-    // Define a cart array to store selected products.
-    let cart = [];
-
-    // Function to add an item to the cart.
-    function addToCart(productId) {
-        // Find the product in the cart, if it already exists.
-        const existingProduct = cart.find(item => item.productId === productId);
-
-        if (existingProduct) {
-            // If the product exists, increment its quantity.
-            existingProduct.quantity++;
-        } else {
-            // If the product doesn't exist in the cart, add it.
-            cart.push({ productId, quantity: 1 });
-        }
-
-        // You can update the cart display here, e.g., by showing a summary of items in the cart.
-        updateCartUI();
-    }
-
-    // Function to update the cart display (you can customize this as needed).
-    function updateCartUI() {
-        // Example: Log the cart data to the console.
-        console.log(cart);
-    }
-
-    // Add event listeners for "Add to Cart" buttons.
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const productId = button.getAttribute('data-product-id');
-            addToCart(productId);
-        });
-    });
-</script>
 </body>
 </html>

@@ -36,7 +36,7 @@ public class UserControllerAPI {
     JavaEmailService javaemailservice;
 
     @PostMapping("/createUser")
-    public String createUser(
+    public ModelAndView createUser(
             @RequestParam("name") String name,
             @RequestParam("rollNumber") String rollNumber,
             @RequestParam("phoneNumber") String phoneNumber
@@ -44,7 +44,8 @@ public class UserControllerAPI {
         System.out.println("Creating user with name: " + name + ", roll number: " + rollNumber + ", and phone number: " + phoneNumber);
 
         userService.addUser(name, rollNumber, phoneNumber);
-        return "redirect:/dashboard";
+        ModelAndView modelAndView = new ModelAndView("redirect:/login");
+        return modelAndView;
     }
 
     @GetMapping("/checkPhoneNumber")

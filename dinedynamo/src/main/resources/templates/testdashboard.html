@@ -1,11 +1,133 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>DineDynamo • Login</title>
+    <title>DineDynamo &bull; Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Add your additional CSS links here, if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
     <style>
+        /* Import Google font - Poppins */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        a {
+            text-decoration: none;
+        }
+        /*.header {*/
+        /*    position: fixed;*/
+        /*    height: 80px;*/
+        /*    width: 100%;*/
+        /*    z-index: 100;*/
+        /*    padding: 0 20px;*/
+        /*}*/
+        .nav {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav,
+        .nav_item {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+        .nav_logo,
+        .nav_link,
+        .button {
+            color: #fff;
+        }
+        .nav_logo {
+            font-size: 25px;
+        }
+        .nav_item {
+            column-gap: 25px;
+        }
+        .nav_link:hover {
+            color: #d9d9d9;
+        }
+        .button {
+            padding: 6px 24px;
+            border: 2px solid #fff;
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .button:active {
+            transform: scale(0.98);
+        }
+        /* Home */
+        .home {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            /*background-image: url("bg.jpg");*/
+            background-size: cover;
+            background-position: center;
+        }
+        .home::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease-out;
+        }
+        .home.show::before {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* From */
+        .home.show .form_container {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .form_container {
+            position: fixed;
+            width: 100%;
+            top: 30%;
+            left: 10%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+            background-image: url("https://images.squarespace-cdn.com/content/v1/545c4607e4b0f8d97a394c9a/1668443127519-3ZNCG4ZJLH49SV9QHD4S/A.ETLING+photography+-+02.28.2022+-_DSC8769.jpg?format=2500w");
+            background-color: #aaaaaa;
+        }
+        @keyframes animate {
+            0%, 100% {
+                background-position: left top;
+            }
+            25%{
+                background-position: right bottom;
+            }
+            50% {
+                background-position: left bottom;
+            }
+            75% {
+                background-position: right top;
+            }
+        }
+        /* Add spacing between product cards */
         .card {
             border: none;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
@@ -21,30 +143,76 @@
     </style>
 </head>
 <body>
-<div class="container mt-4">
-    <div class="row">
-        <div th:each="item, iterStat : ${items}" class="col-md-4">
-            <div class="card mb-4">
-                <img th:src="${item.image}" class="card-img-top" alt="Item Image">
-                <div class="card-body">
-                    <h5 class="card-title" th:text="${item.name}"></h5>
-                    <p class="card-text" th:text="${item.category}"></p>
-                    <p class="card-text" th:text="'Price: ₹' + ${item.price}"></p>
+    <nav class="nav">
+        <a href="#" class="nav_logo">DineDynamo</a>
+        <form method="POST" action="/logout">
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <div><span th:text="${rollNumber}"></span></div>
+                </li>
+            </ul>
+            <div class="nav_link"><span th:text="${name}"></span>!</div>
+            <button type="submit" class="button">Logout</button>
+        </form>
+    </nav>
+<section class="home">
+    <div class="container mt-4">
+        <div class="row">
+            <div th:each="item, iterStat : ${items}" class="col-md-4">
+                <div class="card mb-4">
+                    <img th:src="${item.image}" class="card-img-top" alt="Item Image">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${item.name}"></h5>
+                        <p class="card-text" th:text="${item.category}"></p>
+                        <p class="card-text" th:text="'Price: ₹' + ${item.price}"></p>
+                    </div>
+                    <div class="card-footer" style="background-color: #C6EBBE;">
+                        <button class="btn btn-success float-right">Add to Cart</button>
+                    </div>
                 </div>
-                <div class="card-footer" style="background-color: #C6EBBE;">
-                    <button class="btn btn-success float-right">Add to Cart</button>
-                </div>
+                <!-- Use iterStat.index to add spacing and start a new row every 3 items -->
+                <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
             </div>
-            <!-- Use iterStat.index to add spacing and start a new row every 3 items -->
-            <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
         </div>
     </div>
-</div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script>
+    // Define a cart array to store selected products.
+    let cart = [];
 
-<!-- Add the Bootstrap JavaScript and jQuery (if needed) links at the end of the body -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Add your custom scripts here, if needed -->
+    // Function to add an item to the cart.
+    function addToCart(productId) {
+        // Find the product in the cart, if it already exists.
+        const existingProduct = cart.find(item => item.productId === productId);
+
+        if (existingProduct) {
+            // If the product exists, increment its quantity.
+            existingProduct.quantity++;
+        } else {
+            // If the product doesn't exist in the cart, add it.
+            cart.push({ productId, quantity: 1 });
+        }
+
+        // You can update the cart display here, e.g., by showing a summary of items in the cart.
+        updateCartUI();
+    }
+
+    // Function to update the cart display (you can customize this as needed).
+    function updateCartUI() {
+        // Example: Log the cart data to the console.
+        console.log(cart);
+    }
+
+    // Add event listeners for "Add to Cart" buttons.
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const productId = button.getAttribute('data-product-id');
+            addToCart(productId);
+        });
+    });
+</script>
 </body>
 </html>

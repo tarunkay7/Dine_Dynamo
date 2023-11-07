@@ -27,6 +27,9 @@ public class WebViewController {
     @Autowired
     ItemsService itemsService;
 
+
+
+
     @GetMapping("/signup")
     public String signuppage() {
         return "signup"; // Return the name of the HTML file (without the extension)

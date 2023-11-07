@@ -138,6 +138,26 @@ public class UserControllerAPI {
         return modelAndView;
     }
 
+    @PostMapping("/addItemToCart")
+    public ModelAndView addItemToCart(
+            @RequestParam("name") String name,
+            @RequestParam("category") String category,
+            @RequestParam("price") String price,
+            @RequestParam("image") String image,
+            HttpSession session
+    ) {
+        Items item = new Items(name, category, (int) Double.parseDouble(price), image);
+
+        // Add the selected item to the user's cart
+        itemsService.addItems(item);
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/items");
+        return modelAndView;
+    }
+
+
+
+
 
 
 

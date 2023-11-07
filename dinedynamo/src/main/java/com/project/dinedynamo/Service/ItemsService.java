@@ -5,6 +5,7 @@ import com.project.dinedynamo.Repository.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,4 +36,5 @@ public class ItemsService {
     public Items getItemByName(String name) {
         return itemsrepository.findByName(name);
     }
+
 }

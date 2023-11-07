@@ -26,33 +26,8 @@ public class ItemsControllerAPI {
     @Autowired
     SMSService smsService;
 
-    @PostMapping("/addItems")
-    public Items addItems(@RequestBody Items items) {
-        return itemsservice.addItems(items);
-    }
-
-    @GetMapping("/ItemsByCategory")
-    public String getItemsByCategory(Model model, @RequestParam("") String category) {
-
-        List<Items> items = itemsservice.getItemsByCategory("Lunch");
-
-        model.addAttribute("catitems", items);
-
-        return "catitems";
-    }
 
 
-    @GetMapping("/menu")
-    public String getAll(Model model){
-        List<Items> items = itemsservice.getAllItems();
-        model.addAttribute("items", items);
-        return null;
-    }
-
-    @GetMapping("/getByPrice")
-    public List<Items> getItemsByPrice(@RequestParam int price) {
-        return itemsservice.getItemsByPrice(price);
-    }
 
 
     @PostMapping("/sendEmail")

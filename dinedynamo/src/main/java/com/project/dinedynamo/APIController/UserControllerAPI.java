@@ -65,8 +65,7 @@ public class UserControllerAPI {
     public ModelAndView verifyOTP(
             @RequestParam("phoneNumber") String phoneNumber,
             @RequestParam("otp") String userOTP,
-            HttpServletRequest request,
-            RedirectAttributes redirectAttributes
+            HttpServletRequest request
     ) {
         if (otpService.verifyOTP(phoneNumber, userOTP)) {
             System.out.println("OTP verified successfully");
@@ -138,6 +137,10 @@ public class UserControllerAPI {
 
         return modelAndView;
     }
+
+
+
+
 
 
 }

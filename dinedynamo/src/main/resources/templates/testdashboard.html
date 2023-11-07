@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DineDynamo • Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your additional CSS links here, if needed -->
+    <style>
+        .card {
+            border: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+        .card:hover {
+            transform: scale(1.02); /* Add scaling effect on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+        .card-img-top {
+            height: 200px; /* Set the desired height for the images */
+            object-fit: scale-down; /* Maintain aspect ratio and cover the container */
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row">
+        <div th:each="item, iterStat : ${items}" class="col-md-4">
+            <div class="card mb-4">
+                <img th:src="${item.image}" class="card-img-top" alt="Item Image">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${item.name}"></h5>
+                    <p class="card-text" th:text="${item.category}"></p>
+                    <p class="card-text" th:text="'Price: ₹' + ${item.price}"></p>
+                </div>
+                <div class="card-footer" style="background-color: #C6EBBE;">
+                    <button class="btn btn-success float-right">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Use iterStat.index to add spacing and start a new row every 3 items -->
+            <div th:if="${iterStat.index % 3 == 2}" class="w-100"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Add the Bootstrap JavaScript and jQuery (if needed) links at the end of the body -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Add your custom scripts here, if needed -->
+</body>
+</html>

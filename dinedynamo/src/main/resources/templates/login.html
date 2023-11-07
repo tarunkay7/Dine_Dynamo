@@ -60,24 +60,14 @@
                 <div class="card-body">
                     <form id="phoneForm" method="POST">
                         <div class="form-group">
-                            <label for="phoneNumber">Phone Number:</label>
+                            <label for "phoneNumber">Phone Number:</label>
                             <input type="tel" class="form-control with-underline" id="phoneNumber" name="phoneNumber" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Send OTP</button>
                     </form>
-                    <div class="otp-box" id="otpBox">
-                        <h2 class="text-center">Enter OTP</h2>
-                        <form id="otpForm" action="/api/v1/verifyOTP" method="POST">
-                            <div class="form-group">
-                                <label for="otp">OTP:</label>
-                                <input type="text" class="form-control with-underline" id="otp" name="otp" required>
-                            </div>
-                            <input type="hidden" id="otpPhoneNumber" name="phoneNumber">
-                            <button type="submit" class="btn btn-primary btn-block">Submit OTP</button>
-                        </form>
-                    </div>
                 </div>
             </div>
+            <button id="testButton" class="btn btn-success btn-block">Test</button>
         </div>
     </div>
 </div>
@@ -88,25 +78,25 @@
 
 <script>
     const phoneForm = document.getElementById("phoneForm");
-    const otpBox = document.getElementById("otpBox");
+    const testButton = document.getElementById("testButton");
+
+    testButton.addEventListener("click", function () {
+        // Redirect to the testdashboard.html page when the "Test" button is clicked
+        window.location.href = "testdashboard";
+    });
 
     phoneForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const phoneNumber = document.getElementById("phoneNumber").value;
 
-        // Set the phone number in the hidden input field in the OTP form
-        const otpPhoneNumberInput = document.getElementById("otpPhoneNumber");
-        otpPhoneNumberInput.value = phoneNumber;
-
         // Make an AJAX request to the server to check if the phone number exists
         fetch("/api/v1/checkPhoneNumber?phoneNumber=" + phoneNumber)
             .then(response => response.json())
             .then(data => {
                 if (data.exists) {
-                    // If the phone number exists, hide the phone form and show the OTP box
-                    phoneForm.style.display = "none";
-                    otpBox.style.display = "block";
+                    // If the phone number exists, show an alert (you can modify this behavior)
+                    alert("Phone number exists.");
                 } else {
                     // Handle the case where the phone number doesn't exist (e.g., show an error message)
                     alert("Phone number does not exist.");

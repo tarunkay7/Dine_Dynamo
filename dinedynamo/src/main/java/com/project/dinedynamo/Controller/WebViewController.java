@@ -55,6 +55,15 @@ public class WebViewController {
         return "dashboard";
     }
 
+    @GetMapping("/testdashboard")
+    public String testdashboard(HttpSession session,Model model)
+    {
+        List<Items> items = itemsService.getAllItems();
+        model.addAttribute("items",items);
+        return "testdashboard";
+    }
+
+
     @PostMapping("/logout")
     public String logout(HttpServletRequest request) {
         // get the session and invalidate it

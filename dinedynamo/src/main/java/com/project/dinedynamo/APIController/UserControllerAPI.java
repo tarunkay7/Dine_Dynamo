@@ -75,13 +75,14 @@ public class UserControllerAPI {
             session.setAttribute("phoneNumber", phoneNumber);
 
             // Redirect to the dashboard page in a different controller
-            ModelAndView modelAndView = new ModelAndView("redirect:/dashboard");
-            return modelAndView;
+
         } else {
             System.out.println("Invalid OTP");
             ModelAndView modelAndView = new ModelAndView("redirect:/login");
             return modelAndView;
         }
+        ModelAndView modelAndView = new ModelAndView("redirect:/dashboard");
+        return modelAndView;
     }
 
     @GetMapping("/logout")

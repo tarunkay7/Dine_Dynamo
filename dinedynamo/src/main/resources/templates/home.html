@@ -72,7 +72,7 @@
       transform: scale(0.98);
     }
 
-/* Home */
+    /* Home */
     .home {
       position: relative;
       height: 100vh;
@@ -221,6 +221,10 @@
       text-align: center;
       margin-top: 15px;
     }
+    .header-buttons {
+      display: flex;
+      gap: 20px;
+    }
 
     body {
       margin: 0;
@@ -241,8 +245,7 @@
       align-items: center;
 
     }
-
-.text-container h1{
+    .text-container h1{
       margin: 0;
       font-size: 50px;
       color: rgba(225,225,225, .01);
@@ -255,6 +258,7 @@
       text-transform: uppercase;
       font-weight: 900;
     }
+
 
     @keyframes animate {
       0%, 100% {
@@ -280,14 +284,17 @@
 <header class="header">
   <nav class="nav">
     <a href="#" class="nav_logo">DineDynamo</a>
-    <form action="/api/v1/signup" method="POST">
-      <button type = "submit" class="button">Sign Up</button>
-    </form>
-    <form action="/api/v1/login" method="POST">
-      <button type = "submit" class="button">Login</button>
-    </form>
+    <div class="header-buttons">
+      <form action="/api/v1/login" method="POST">
+        <button type="submit" class="button">Login</button>
+      </form>
+      <form action="/api/v1/signup" method="POST">
+        <button type="submit" class="button signup-button">Sign Up</button>
+      </form>
+    </div>
   </nav>
 </header>
+
 <div class="text-container">
   <h1>Explore Our Culinary Delights!</h1>
 </div>
@@ -305,6 +312,20 @@
           <input type="tel" placeholder="Enter your Contact NO." required />
           <i class="uil uil-phone-alt phone"></i>
         </div>
+        <!--        <div class="input_box">-->
+        <!--          <input type="password" placeholder="Enter your password" required />-->
+        <!--          <i class="uil uil-lock password"></i>-->
+        <!--          <i class="uil uil-eye-slash pw_hide"></i>-->
+        <!--        </div>-->
+
+        <!--        <div class="option_field">-->
+        <!--              <span class="checkbox">-->
+        <!--                <input type="checkbox" id="check" />-->
+        <!--                <label for="check">Remember me</label>-->
+        <!--              </span>-->
+        <!--          <a href="#" class="forgot_pw">Forgot password?</a>-->
+        <!--        </div>-->
+
         <button class="button">Get OTP</button>
 
         <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
@@ -435,6 +456,7 @@
                       <h4 class="card-title">Poori</h4>
                       <p class="card-text">Served with Aloo curry and Chutney.</p>
 
+
                     </div>
                   </div>
                 </div>
@@ -557,42 +579,42 @@
   </div>
 </section>
 <script>
-//   const formOpenBtn = document.querySelector("#form-open"),
-//           home = document.querySelector(".home"),
-//           formContainer = document.querySelector(".form_container"),
-//           formCloseBtn = document.querySelector(".form_close"),
-//           signupBtn = document.querySelector("#signup"),
-//           loginBtn = document.querySelector("#login"),
-//           OTPBtn = document.querySelector("#otp"),
-// pwShowHide = document.querySelectorAll(".pw_hide");
-//
-//   formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-//   formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
-//   pwShowHide.forEach((icon) => {
-//     icon.addEventListener("click", () => {
-//       let getPwInput = icon.parentElement.querySelector("input");
-//       if (getPwInput.type === "password") {
-//         getPwInput.type = "text";
-//         icon.classList.replace("uil-eye-slash", "uil-eye");
-//       } else {
-//         getPwInput.type = "password";
-//         icon.classList.replace("uil-eye", "uil-eye-slash");
-//       }
-//     });
-//   });
-//
-//   signupBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     formContainer.classList.add("active");
-//   });
-//   loginBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     formContainer.classList.remove("active");
-//   });
-//   OTPBtn.addEventListener("click",(e)=>{
-//       e.preventDefault();
-//       formContainer.classList.add("active");
-//   });
+  //   const formOpenBtn = document.querySelector("#form-open"),
+  //           home = document.querySelector(".home"),
+  //           formContainer = document.querySelector(".form_container"),
+  //           formCloseBtn = document.querySelector(".form_close"),
+  //           signupBtn = document.querySelector("#signup"),
+  //           loginBtn = document.querySelector("#login"),
+  //           OTPBtn = document.querySelector("#otp"),
+  // pwShowHide = document.querySelectorAll(".pw_hide");
+  //
+  //   formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+  //   formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+  //   pwShowHide.forEach((icon) => {
+  //     icon.addEventListener("click", () => {
+  //       let getPwInput = icon.parentElement.querySelector("input");
+  //       if (getPwInput.type === "password") {
+  //         getPwInput.type = "text";
+  //         icon.classList.replace("uil-eye-slash", "uil-eye");
+  //       } else {
+  //         getPwInput.type = "password";
+  //         icon.classList.replace("uil-eye", "uil-eye-slash");
+  //       }
+  //     });
+  //   });
+  //
+  //   signupBtn.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     formContainer.classList.add("active");
+  //   });
+  //   loginBtn.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     formContainer.classList.remove("active");
+  //   });
+  //   OTPBtn.addEventListener("click",(e)=>{
+  //       e.preventDefault();
+  //       formContainer.classList.add("active");
+  //   });
 </script>
 </body>
 </html>

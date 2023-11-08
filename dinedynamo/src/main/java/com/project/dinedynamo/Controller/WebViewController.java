@@ -82,4 +82,26 @@ public class WebViewController {
     public String homepage() {
         return "home"; // Return the name of the HTML file (without the extension)
     }
+
+    @GetMapping("/cart")
+    public String cart(HttpSession session,Model model)
+    {
+        //String phonenumber = (String) session.getAttribute("phoneNumber");
+
+        List<Items> items = userService.getCartItems("8309614765");
+
+        int total = 0;
+        for(Items item :items) {
+            total+= item.getPrice();
+        }
+        int numberofitems = items.size();
+
+        model.addAttribute("cartitems",items);
+        model.addAttribute("itemtotal",total);
+        model.addAttribute("countitems",numberofitems);
+
+        return "cart";
+
+
+    }
 }

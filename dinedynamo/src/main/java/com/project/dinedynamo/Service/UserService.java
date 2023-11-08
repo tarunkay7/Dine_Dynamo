@@ -6,6 +6,7 @@ import com.project.dinedynamo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -72,5 +73,21 @@ public class UserService {
     }
 
 
+    public List<Items> getCartItems(String phonenumber) {
+        User user = getUserByPhoneNumber(phonenumber);
+        System.out.println(user.getCart());
+        List<Items> cartitems = new ArrayList<>();
+        List<String> cartitemnames = user.getCart();
+        for(String item : cartitemnames)
+        {
+           Items retrieveditem = itemsService.getItemByName(item);
+           cartitems.add(retrieveditem);
+
+        }
+        return cartitems;
+
+
+
+    }
 }
 

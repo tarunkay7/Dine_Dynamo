@@ -3,6 +3,7 @@ package com.project.dinedynamo.Controller;
 import com.project.dinedynamo.Entities.Items;
 import com.project.dinedynamo.Entities.User;
 import com.project.dinedynamo.Service.ItemsService;
+import com.project.dinedynamo.Service.OTPService;
 import com.project.dinedynamo.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +27,9 @@ public class WebViewController {
 
     @Autowired
     ItemsService itemsService;
+
+    @Autowired
+    OTPService otpService;
 
 
 
@@ -89,6 +93,10 @@ public class WebViewController {
         //String phonenumber = (String) session.getAttribute("phoneNumber");
 
         List<Items> items = userService.getCartItems("8309614765");
+        String token =  otpService.generateRandomOTP();
+
+
+
 
         int total = 0;
         for(Items item :items) {
@@ -99,6 +107,7 @@ public class WebViewController {
         model.addAttribute("cartitems",items);
         model.addAttribute("itemtotal",total);
         model.addAttribute("countitems",numberofitems);
+        model.addAttribute("tokennumber",token);
 
         return "cart";
 

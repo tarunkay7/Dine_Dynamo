@@ -29,7 +29,7 @@ public class OTPService {
         sendOTP(phoneNumber, otp);
     }
 
-    private String generateRandomOTP() {
+    public String generateRandomOTP() {
         // Generate a random numeric OTP of 6 digits
         return RandomStringUtils.randomNumeric(6);
     }
